@@ -1,0 +1,264 @@
+/* =========================================
+   Forza Ingeniería - Stylesheet
+   ========================================= */
+
+/* --- Google Fonts Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+:root {
+    /* Palette */
+    --primary-color: #003366;
+    /* Navy Blue - Trust & Engineering */
+    --primary-light: #004d99;
+    /* Lighter Navy for hovers */
+    --accent-color: #ff6600;
+    /* Safety Orange - Energy & Highlights */
+    --text-dark: #333333;
+    /* Dark Grey for text */
+    --text-light: #666666;
+    /* Light Grey for subtitles */
+    --bg-light: #f8f9fa;
+    /* Very light grey for section backgrounds */
+    --white: #ffffff;
+
+    /* Typography */
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+
+    /* n8n Chat Customization */
+    --chat--color--primary: var(--primary-color);
+    --chat--color--secondary: var(--accent-color);
+    --chat--header--background: var(--primary-color);
+    --chat--toggle--background: var(--accent-color);
+    --chat--toggle--hover--background: #e65c00;
+    --chat--toggle--active--background: #cc5200;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* --- Utilities --- */
+.text-primary-custom {
+    color: var(--primary-color) !important;
+}
+
+.text-accent {
+    color: var(--accent-color) !important;
+}
+
+.bg-primary-custom {
+    background-color: var(--primary-color) !important;
+}
+
+.bg-accent {
+    background-color: var(--accent-color) !important;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.section-title {
+    margin-bottom: 50px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-color);
+}
+
+.section-title.text-start::after {
+    left: 0;
+    transform: none;
+}
+
+/* --- Navbar --- */
+.navbar {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px 0;
+}
+
+.navbar-brand {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--primary-color) !important;
+    letter-spacing: -0.5px;
+}
+
+.navbar-brand span {
+    color: var(--accent-color);
+}
+
+.nav-link {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    color: var(--text-dark) !important;
+    margin-left: 15px;
+    font-size: 0.95rem;
+}
+
+.nav-link:hover {
+    color: var(--accent-color) !important;
+}
+
+.nav-link.active {
+    color: var(--primary-color) !important;
+}
+
+.btn-cta {
+    background-color: var(--accent-color);
+    color: var(--white);
+    font-weight: 600;
+    padding: 10px 25px;
+    border-radius: 5px;
+    border: none;
+}
+
+.btn-cta:hover {
+    background-color: #e65c00;
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    background: linear-gradient(rgba(0, 51, 102, 0.8), rgba(0, 51, 102, 0.7)), url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    padding: 150px 0 100px;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--white);
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+/* --- Cards --- */
+.service-card {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    height: 100%;
+    overflow: hidden;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.service-icon {
+    font-size: 3rem;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #1a1a1a;
+    color: #cccccc;
+    padding: 60px 0 20px;
+}
+
+footer h5 {
+    color: var(--white);
+    margin-bottom: 20px;
+}
+
+footer a {
+    color: #cccccc;
+}
+
+footer a:hover {
+    color: var(--accent-color);
+}
+
+.footer-bottom {
+    border-top: 1px solid #333;
+    margin-top: 40px;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .section-padding {
+        padding: 50px 0;
+    }
+}
+
+/* --- WhatsApp Floating Button --- */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 110px;
+    right: 40px;
+    /* Right aligned, stacked above n8n chat */
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    background-color: #128c7e;
+    color: #FFF;
+    transform: scale(1.1);
+}
+
+.whatsapp-icon {
+    margin-top: 2px;
+}
