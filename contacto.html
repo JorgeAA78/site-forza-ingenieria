@@ -218,7 +218,34 @@
     </a>
 
     <!-- Chat Script -->
-    <script type="module" src="/main.js"></script>
+    <!-- Vue Feature Flags -->
+    <script>
+        window.__VUE_OPTIONS_API__ = true;
+        window.__VUE_PROD_DEVTOOLS__ = false;
+        window.__VUE_PROD_HYDRATION_MISMATCH_DETAILS__ = false;
+    </script>
+
+    <!-- n8n Chat -->
+    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+    <script type="module">
+        import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+        createChat({
+            webhookUrl: 'https://n8ncurso2025-n8n.mos4xj.easypanel.host/webhook/48d92f19-907d-4db8-8b3d-dd1205283b46/chat',
+            initialMessages: [
+                'Hola',
+                'estoy aqui para ayudarte'
+            ],
+            i18n: {
+                en: {
+                    title: '¡Hola, soy el asistente virtual de Forza Ingenieria! 👋',
+                    subtitle: 'Inicia un chat. Estamos aquí para ayudarte 24/7.',
+                    getStarted: 'Nueva Conversación',
+                    inputPlaceholder: 'Escribe tu pregunta...',
+                },
+            },
+        });
+    </script>
 </body>
 
 </html>
